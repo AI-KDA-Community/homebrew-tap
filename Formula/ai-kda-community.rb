@@ -5,32 +5,42 @@
 class AiKdaCommunity < Formula
   desc "Source of truth for the Kadena Chainweb ecosystem"
   homepage "https://github.com/AI-KDA-Community/source_of_truth"
-  version "0.2.4"
+  version "0.2.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/AI-KDA-Community/releases/releases/download/v0.2.4/ai-kda-community_0.2.4_darwin_amd64.tar.gz"
-      sha256 "fe3ee3a1e8d8b575aee0f7b00713bc18c1c24cddeb078d80a9c0ab5d190682a5"
-      define_method(:install) { bin.install "ai-kda-community" }
+      url "https://github.com/AI-KDA-Community/releases/releases/download/v0.2.5/ai-kda-community_0.2.5_darwin_amd64.tar.gz"
+      sha256 "214ec2b2a58f36bc1f5e83f0c5e56295caff64125f9b6b769b2aa094fee0c17f"
+
+      define_method(:install) do
+        bin.install "ai-kda-community"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/AI-KDA-Community/releases/releases/download/v0.2.4/ai-kda-community_0.2.4_darwin_arm64.tar.gz"
-      sha256 "1cfd239830c6f3800f7383eb041bbed64151fd30260554ba6699bb742c3063d3"
-      define_method(:install) { bin.install "ai-kda-community" }
+      url "https://github.com/AI-KDA-Community/releases/releases/download/v0.2.5/ai-kda-community_0.2.5_darwin_arm64.tar.gz"
+      sha256 "aeb98bf4552976deae65d64bf773f8f5526b12c7042fd2b50837d32382d70ff9"
+
+      define_method(:install) do
+        bin.install "ai-kda-community"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/AI-KDA-Community/releases/releases/download/v0.2.4/ai-kda-community_0.2.4_linux_amd64.tar.gz"
-      sha256 "6aa834296fcdbcfc11fc0f686c15a2a3818373836420e5fdd0f9c8fcd4153df6"
-      define_method(:install) { bin.install "ai-kda-community" }
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/AI-KDA-Community/releases/releases/download/v0.2.5/ai-kda-community_0.2.5_linux_amd64.tar.gz"
+      sha256 "be4531838bd3986cc5c82f784022033cca85d1b5a88ad0616ef5f0a7f435608e"
+      define_method(:install) do
+        bin.install "ai-kda-community"
+      end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/AI-KDA-Community/releases/releases/download/v0.2.4/ai-kda-community_0.2.4_linux_arm64.tar.gz"
-      sha256 "89d847a71c3a3bd87bb22d7784ae6103fad7358deba84dbb14c7587c88540dc5"
-      define_method(:install) { bin.install "ai-kda-community" }
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/AI-KDA-Community/releases/releases/download/v0.2.5/ai-kda-community_0.2.5_linux_arm64.tar.gz"
+      sha256 "3560090601931677e75e9712ce5a5fba92afec105ff93cddc2f784b81b313907"
+      define_method(:install) do
+        bin.install "ai-kda-community"
+      end
     end
   end
 
